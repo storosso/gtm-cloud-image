@@ -4,9 +4,9 @@ FROM node:18
 # Create app directory
 WORKDIR /app
 
-# Copy only needed files
-COPY package.json ./
-COPY index.js ./
+# Copy only necessary files
+COPY package.json .
+COPY index.js .
 
 # Install dependencies
 RUN npm install
@@ -14,5 +14,5 @@ RUN npm install
 # Expose port
 EXPOSE 8080
 
-# Start app
-CMD ["npm", "start"]
+# Start the app
+CMD ["node", "index.js"]
