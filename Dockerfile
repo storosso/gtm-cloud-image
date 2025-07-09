@@ -1,6 +1,5 @@
 FROM ghcr.io/gtm-oss/gtm-cloud-image:latest
 
-ENV PORT=80
-EXPOSE 80
+ENV PORT=8080
 
-CMD ["node", "server.js"]
+EXPOSE 8080
