@@ -15,11 +15,12 @@ app.use((req, res, next) => {
   next();
 });
 
-// ➕ Minimal /collect route
+// 🟢 Minimal /collect route
 app.post('/collect', (req, res) => {
   res.send('CORS test successful');
 });
 
+// 🟡 Start server on provided or fallback port
 app.listen(process.env.PORT || 8080, () => {
-  console.log('Server listening...');
+  console.log(`Server listening on port ${process.env.PORT || 8080}`);
 });
