@@ -1,1 +1,1 @@
-FROM ghcr.io/ivanmorenoj/google-tag-manager-ss:latest
+FROM ghcr.io/ivanmorenoj/google-tag-manager-ss:v1.4.2
