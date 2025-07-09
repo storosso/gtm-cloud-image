@@ -1,26 +1,23 @@
+// index.js
 const express = require('express');
+const cors = require('cors');
 const app = express();
+const port = 8080;
 
-// ✅ CORS setup
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://storosso.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
+app.use(cors());
+app.use(express.json());
 
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-
-  next();
+// 🟢 Health check
+app.get('/', (req, res) => {
+  res.send('Server is running');
 });
 
-// 🟢 Minimal /collect route
+// 🟢 Working collect endpoint
 app.post('/collect', (req, res) => {
-  res.send('CORS test successful');
+  console.log('Data received:', req.body);
+  res.status(200).send('Received!');
 });
 
-// 🟡 Start server on provided or fallback port
-app.listen(process.env.PORT || 8080, () => {
-  console.log(`Server listening on port ${process.env.PORT || 8080}`);
+app.listen(port, () => {
+  console.log(`✅ Server running at http://localhost:${port}`);
 });
