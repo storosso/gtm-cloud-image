@@ -1,1 +1,1 @@
-FROM ghcr.io/ivanmorenoj/google-tag-manager-ss:v1.4.2
+FROM ghcr.io/gtm-servers/gtm-cloud-image:latest
