@@ -1,2 +1,1 @@
-FROM gcr.io/cloud-tagging-10302018/gtm-cloud-image:stable
-EXPOSE 8080
+FROM gcr.io/gtm-cloud/gtm-cloud-run-server
